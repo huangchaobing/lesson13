@@ -1,0 +1,31 @@
+server:
+  contextpath: /
+  port: 8081
+
+spring:
+  application:
+    name: trans-stock-service
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_stock?useSSL=false
+    username: root
+    password: root
+    ##初始化连接数
+    initialSize: 5
+    ##最小连接数
+    minIdle: 5
+    ##最大连接数
+    maxActive: 20
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  ##rabbitmq配置信息
+  rabbitmq:
+    host: 192.168.1.120
+    port: 5672
+    username: root
+    password: hcb13579
